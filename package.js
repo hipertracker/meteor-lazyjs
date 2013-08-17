@@ -3,10 +3,8 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  api.add_files([
-    'lazy.js/lazy.min.js',
-    ], ['client', 'server']);
-  api.add_files([
-    'lazy.js/lazy.dom.js'
-    ], ['client']);
+  api.use('meteor', {unordered: true});
+  api.export('Lazy');
+  api.add_files(['lazy.js/lazy.min.js', ['client', 'server']);
+  api.add_files(['lazy.js/lazy.dom.js'], ['client']);
 });
